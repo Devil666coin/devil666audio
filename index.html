@@ -1,79 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <style>
-    body {
-      margin: 0;
-      background-color: black;
-      overflow: hidden;
-      position: relative;
-      height: 100vh;
-    }
+<body onclick="startAudio()" ontouchstart="startAudio()" style="background-color: black; margin: 0;">
 
-    #fire-bg {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: 1;
-      opacity: 0.2;
-      pointer-events: none;
-    }
+  <audio id="curseAudio" autoplay loop>
+    <source src="https://static.wixstatic.com/mp3/528d6_d39f5edc3b69459f977c0351111784.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
 
-    .blood {
-      position: absolute;
-      width: 120px;
-      height: 120px;
-      background: url('https://i.ibb.co/3cQBvHP/blood-splatter.png') no-repeat center center;
-      background-size: contain;
-      animation: bloodFade 6s infinite ease-in-out;
-      z-index: 3;
-      pointer-events: none;
+  <script>
+    function startAudio() {
+      const audio = document.getElementById("curseAudio");
+      if (audio.paused) {
+        audio.play().catch(() => {});
+      }
     }
+  </script>
 
-    .blood:nth-child(2) {
-      top: 10%; left: 70%;
-    }
-
-    .blood:nth-child(3) {
-      top: 60%; left: 20%;
-      animation-delay: 3s;
-    }
-
-    @keyframes bloodFade {
-      0%, 100% {opacity: 0;}
-      25%, 50% {opacity: 1;}
-    }
-
-    .sigil {
-      position: absolute;
-      top: 40%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100px;
-      height: 100px;
-      background: url('https://i.ibb.co/pKJ6NNc/demonic-sigil.png') no-repeat center center;
-      background-size: contain;
-      animation: flash 3s infinite;
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    @keyframes flash {
-      0%, 100% {opacity: 0.1;}
-      50% {opacity: 0.5;}
-    }
-  </style>
-</head>
-<body>
-  <video id="fire-bg" autoplay muted loop playsinline>
-    <source src="https://cdn.pixabay.com/vimeo/253044954/fire-17419.mp4?width=640&hash=1b79f7ea06125cd9eb16657bba848b10c7aaadd9" type="video/mp4">
-  </video>
-
-  <div class="blood"></div>
-  <div class="blood"></div>
-  <div class="sigil"></div>
-</body>
-</html>
+  <!-- Il resto del tuo contenuto qui -->
