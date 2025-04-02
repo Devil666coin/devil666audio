@@ -1,26 +1,40 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Devil Curse Audio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      body {
-        margin: 0;
-        background-color: black;
-      }
-    </style>
-  </head>
-  <body onclick="startAudio()" ontouchstart="startAudio()">
-    <audio id="curseAudio" autoplay loop>
-      <source src="https://static.wixstatic.com/mp3/b528d6_d39f5edc30b4494599747c0335111784.mp3" type="audio/mp3" />
-    </audio>
-    <script>
-      function startAudio() {
-        const audio = document.getElementById("curseAudio");
-        if (audio.paused) {
-          audio.play().catch(() => {});
-        }
-      }
-    </script>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Curse Audio Trigger</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      background: transparent;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+
+<audio id="curseAudio" loop>
+  <source src="https://static.wixstatic.com/mp3/b528d6_d39f5edc30b4494599747c0335111784.mp3" type="audio/mp3">
+</audio>
+
+<script>
+  const audio = document.getElementById('curseAudio');
+  let started = false;
+
+  function startAudio() {
+    if (!started) {
+      audio.play().catch(() => {});
+      started = true;
+    }
+  }
+
+  document.addEventListener("click", startAudio, { once: true });
+  document.addEventListener("touchstart", startAudio, { once: true });
+</script>
+
+</body>
 </html>
