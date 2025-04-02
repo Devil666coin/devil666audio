@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Devil Curse Audio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin: 0;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body onclick="startAudio()" ontouchstart="startAudio()">
+    <audio id="curseAudio" autoplay loop>
+      <source src="https://static.wixstatic.com/mp3/b528d6_d39f5edc30b4494599747c0335111784.mp3" type="audio/mp3" />
+    </audio>
+    <script>
+      function startAudio() {
+        const audio = document.getElementById("curseAudio");
+        if (audio.paused) {
+          audio.play().catch(() => {});
+        }
+      }
+    </script>
+  </body>
+</html>
