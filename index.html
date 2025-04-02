@@ -1,15 +1,30 @@
-<body onclick="startAudio()" ontouchstart="startAudio()" style="background-color: black; margin: 0;">
-
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Devil Curse Audio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: black;
+    }
+  </style>
+</head>
+<body onclick="startAudio()" ontouchstart="startAudio()">
   <audio id="curseAudio" autoplay loop>
-    <source src="https://static.wixstatic.com/mp3/528d6_d39f5edc3b69459f977c0351111784.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
+    <source src="https://static.wixstatic.com/mp3/5b528d6_d39f5edc3b8449599742c335111784.mp3" type="audio/mp3">
   </audio>
 
   <script>
     function startAudio() {
-      const audio = document.getElementById("curseAudio");
+      const audio = document.getElementById('curseAudio');
       if (audio.paused) {
         audio.play().catch(() => {});
       }
     }
   </script>
+</body>
+</html>
