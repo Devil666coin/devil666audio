@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Unholy Audio Touch</title>
+  <meta charset="UTF-8">
+  <title>Curse Audio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     html, body {
       margin: 0;
       padding: 0;
-      background: black;
+      background-color: black;
       height: 100vh;
       overflow: hidden;
     }
-
     #touchArea {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
@@ -26,25 +25,21 @@
 <body>
   <div id="touchArea"></div>
 
-  <audio id="curseAudio" autoplay loop>
-    <source src="https://static.wixstatic.com/mp3/528d6_d39f5edc384b4599974c2331511784.mp3" type="audio/mp3">
+  <audio id="curseAudio" loop>
+    <source src="https://static.wixstatic.com/mp3/b528d6_d39f5edc30b4494599747c0335111784.mp3" type="audio/mp3">
   </audio>
 
   <script>
-    const touchArea = document.getElementById('touchArea');
-    const audio = document.getElementById('curseAudio');
-    let started = false;
+    const audio = document.getElementById("curseAudio");
+    const touchArea = document.getElementById("touchArea");
 
-    function startAudio() {
-      if (!started) {
-        audio.play().catch(() => {});
-        started = true;
-        touchArea.remove(); // rimuove il layer dopo il primo tocco
-      }
+    function playAudio() {
+      audio.play().catch(() => {});
+      touchArea.remove(); // rimuove il layer dopo il primo tocco
     }
 
-    touchArea.addEventListener('click', startAudio);
-    touchArea.addEventListener('touchstart', startAudio);
+    touchArea.addEventListener("click", playAudio);
+    touchArea.addEventListener("touchstart", playAudio);
   </script>
 </body>
 </html>
