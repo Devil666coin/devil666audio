@@ -39,6 +39,7 @@
       if (!started) {
         audio.play().catch(() => {});
         started = true;
+        touchArea.remove(); // rimuove il layer dopo il primo tocco
       }
     }
 
