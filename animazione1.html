@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Animations</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      overflow: hidden;
+    }
+
+    .symbol {
+      position: absolute;
+      width: 80px;
+      height: auto;
+      opacity: 0;
+      animation: fadeLoop 6s infinite;
+    }
+
+    .symbol:nth-child(1) {
+      top: 10%;
+      left: 20%;
+      animation-delay: 0s;
+    }
+
+    .symbol:nth-child(2) {
+      top: 30%;
+      left: 60%;
+      animation-delay: 1s;
+    }
+
+    .symbol:nth-child(3) {
+      top: 50%;
+      left: 35%;
+      animation-delay: 2s;
+    }
+
+    .symbol:nth-child(4) {
+      top: 70%;
+      left: 55%;
+      animation-delay: 3s;
+    }
+
+    .symbol:nth-child(5) {
+      top: 85%;
+      left: 15%;
+      animation-delay: 4s;
+    }
+
+    @keyframes fadeLoop {
+      0% { opacity: 0; transform: scale(0.8); }
+      25% { opacity: 1; transform: scale(1); }
+      75% { opacity: 1; transform: scale(1); }
+      100% { opacity: 0; transform: scale(0.8); }
+    }
+  </style>
+</head>
+<body>
+  <img src="https://i.imgur.com/EPZ8b7U.png" class="symbol" />
+  <img src="https://i.imgur.com/xAxU5wv.png" class="symbol" />
+  <img src="https://i.imgur.com/JZq9He7.png" class="symbol" />
+  <img src="https://i.imgur.com/EPZ8b7U.png" class="symbol" />
+  <img src="https://i.imgur.com/xAxU5wv.png" class="symbol" />
+</body>
+</html>
