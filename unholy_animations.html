@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unholy Animations</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      background: black;
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .symbol {
+      position: absolute;
+      width: 100px;
+      height: auto;
+      opacity: 0;
+      animation: fadeInOut 5s infinite;
+      pointer-events: none;
+    }
+
+    .symbol:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
+    .symbol:nth-child(2) { top: 30%; left: 60%; animation-delay: 1s; }
+    .symbol:nth-child(3) { top: 55%; left: 35%; animation-delay: 2s; }
+    .symbol:nth-child(4) { top: 70%; left: 70%; animation-delay: 3s; }
+    .symbol:nth-child(5) { top: 85%; left: 15%; animation-delay: 4s; }
+
+    @keyframes fadeInOut {
+      0%   { opacity: 0; transform: scale(0.7); }
+      20%  { opacity: 1; transform: scale(1); }
+      80%  { opacity: 1; }
+      100% { opacity: 0; transform: scale(0.7); }
+    }
+  </style>
+</head>
+<body>
+  <img src="https://i.ibb.co/yRrm5P5/inverted-cross.png" class="symbol" alt="cross" />
+  <img src="https://i.ibb.co/x2CNc9v/blood-splash-1.png" class="symbol" alt="blood1" />
+  <img src="https://i.ibb.co/pKh6NB0/blood-splash-2.png" class="symbol" alt="blood2" />
+  <img src="https://i.ibb.co/yRrm5P5/inverted-cross.png" class="symbol" alt="cross2" />
+  <img src="https://i.ibb.co/x2CNc9v/blood-splash-1.png" class="symbol" alt="blood3" />
+</body>
+</html>
